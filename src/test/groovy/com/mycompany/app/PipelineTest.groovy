@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before
-import org.junit.Test;
+import org.junit.Test
 
 class PipelineTest extends BasePipelineTest {
 
@@ -19,8 +19,10 @@ class PipelineTest extends BasePipelineTest {
     void shouldAnswerWithTrue() throws Exception {
         def pipelineScript = loadScript("src/main/groovy/com/mycompany/app/Pipeline.groovy")
         pipelineScript.execute()
-        assertEquals(helper.callStack.filter { call ->
-            callArgsToString(call).contains("Hello World!")
-            }.count(), 1)
+        assertEquals(Arrays.stream(helper.callStack)
+                        .filter { call ->
+                            call.toString().contains("echo Hello World!")
+                        }
+                        .any(), true)
     }
 }
