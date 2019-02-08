@@ -1,5 +1,5 @@
 package com.mycompany.app;
 
-def call() {
-    println( "Hello World!" )
+def execute() {
+    sh "echo Hello World!"
 }

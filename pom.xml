@@ -27,6 +27,13 @@
     </dependency>
 
     <dependency>
+        <groupId>com.lesfurets</groupId>
+        <artifactId>jenkins-pipeline-unit</artifactId>
+        <version>1.1</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
@@ -42,23 +49,6 @@
                 <artifactId>gmavenplus-plugin</artifactId>
                 <version>1.6.2</version>
                 <executions>
-                    <execution>
-                        <id>add-sources</id>
-                        <goals>
-                            <goal>addSources</goal>
-                            <goal>compile</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>
-                                    <directory>${project.basedir}/vars</directory>
-                                    <includes>
-                                        <include>**/*.groovy</include>
-                                    </includes>
-                                </source>
-                            </sources>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>add-test-sources</id>
                         <goals>
@@ -84,6 +74,5 @@
                 <version>2.22.1</version>
             </plugin>
         </plugins>
-
   </build>
 </project>
