@@ -1,5 +1,8 @@
 def call() {
-    sh 'echo Hello World!!'
+    node("Testing") {
+        println ("starting")
+        sh 'echo Hello World!!'
+    }
 }
 
 return this

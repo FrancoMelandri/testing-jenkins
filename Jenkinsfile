@@ -1,2 +1,2 @@
-@Library("testing-jenkins") _
+@Library("testing-jenkins")
 pipeline()
