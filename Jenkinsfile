@@ -1,2 +1,2 @@
-@Library("pipeline-testing-library") _
-dispatcher()
+@Library("testing-jenkins") _
+pipeline()
