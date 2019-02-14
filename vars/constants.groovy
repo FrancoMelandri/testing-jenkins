@@ -1,7 +1,8 @@
 String BUILD
 
 def call() {
-    BUILD = "Building..."
+    this.BUILD = "Building..."
+    return this
 }
 
 return this
