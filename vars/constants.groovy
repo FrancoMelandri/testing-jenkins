@@ -1,5 +1,8 @@
 class Constants {
-    public static final BUILD = "Building..."
+    Constants() {
+        BUILD = "Building..."
+    }
+    public final BUILD
 }
 
 return new Constants()
