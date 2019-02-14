@@ -1,5 +1,3 @@
-import vars.constants.Constants
-
 def call() {
     pipeline {
         agent any
@@ -7,7 +5,7 @@ def call() {
         stages {
             stage('Build') {
                 steps {
-                    echo Constants.BUILD
+                    echo constants.BUILD
                 }
             }
             stage('Test') {

@@ -1,3 +1,5 @@
 class Constants {
-    public static final BUILD = "Building..."
+    def BUILD = "Building..."
 }
+
+return new Constants()
