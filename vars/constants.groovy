@@ -1,4 +1,4 @@
-def BUILD
+String BUILD
 
 def call() {
     BUILD = "Building..."
