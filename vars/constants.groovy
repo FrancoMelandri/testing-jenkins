@@ -1,6 +1,4 @@
 
-def BUILD() {
-    return "Building..."
-}
+def BUILD() { "Building..." }
 
 return this
