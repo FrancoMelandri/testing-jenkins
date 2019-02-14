@@ -1,6 +1,7 @@
-String BUILD = "Building..."
+String BUILD
 
 def call() {
+    BUILD = "Building..."
     return this
 }
 
