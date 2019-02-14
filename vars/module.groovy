@@ -1,8 +1,24 @@
 def call() {
-    node("Testing") {
-        println ("starting")
-        sh 'echo Hello World!!'
+    pipeline {
+        agent any
+
+        stages {
+            stage('Build') {
+                steps {
+                    echo 'Building..'
+                }
+            }
+            stage('Test') {
+                steps {
+                    echo 'Testing..'
+                }
+            }
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying....'
+                }
+            }
+        }
     }
 }
-
 return this
