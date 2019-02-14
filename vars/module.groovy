@@ -5,7 +5,7 @@ def call() {
         stages {
             stage('Build') {
                 steps {
-                    echo constants.BUILD
+                    echo constants().BUILD
                 }
             }
             stage('Test') {
