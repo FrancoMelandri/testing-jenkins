@@ -1,4 +1,4 @@
-import constants.Constants
+import vars.constants.*
 
 def call() {
     pipeline {
