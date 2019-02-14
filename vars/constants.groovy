@@ -1,8 +1,3 @@
-class Constants {
-    Constants() {
-        BUILD = "Building..."
-    }
-    public final BUILD
-}
 
-return new Constants()
+def BUILD = "Building..."
+return this
