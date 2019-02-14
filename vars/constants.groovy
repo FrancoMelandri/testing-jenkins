@@ -1,7 +1,6 @@
-def BUILD
 
-def call() {
-    BUILD = "Building..."
+def BUILD() {
+    return "Building..."
 }
 
 return this
