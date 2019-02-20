@@ -1,6 +1,9 @@
 // @Library("testing-jenkins") _
 // module()
 
+    println ('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    println (params.Target)
+    println ('<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<')
     pipeline {
         agent any
 
