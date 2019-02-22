@@ -7,22 +7,23 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before
 import org.junit.Test
 
-class PipelineTest extends BasePipelineTest {
+class PipelineTest extends PipelineTestHelper {
+
+    def sut
 
     @Override
     @Before
     void setUp () throws Exception {
         super.setUp()
+
+        sut = loadScript("vars/module.groovy")
+        sut.constants = loadScript("vars/constants.groovy")
+        sut.logger = loadScript("src/test/mock/logger.groovy")
+        sut.logger.initialize()
     }
 
     @Test
-    void shouldAnswerWithTrue() throws Exception {
-        def pipelineScript = loadScript("src/main/groovy/com/mycompany/app/Pipeline.groovy")
-        pipelineScript.execute()
-        assertEquals(Arrays.stream(helper.callStack)
-                        .filter { call ->
-                            call.toString().contains("echo Hello World!")
-                        }
-                        .any(), true)
+    void shouldCallPrepareLog() throws Exception {
+        sut.call()
     }
 }

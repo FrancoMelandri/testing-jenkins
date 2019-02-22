@@ -5,17 +5,22 @@ def call() {
         stages {
             stage('Build') {
                 steps {
-                    echo constants.BUILD()
+                    logger.log constants.PREPARE()
+                }
+            }
+            stage('Build') {
+                steps {
+                    logger.log constants.BUILD()
                 }
             }
             stage('Test') {
                 steps {
-                    echo 'Testing..'
+                    logger.log constants.TEST()
                 }
             }
             stage('Deploy') {
                 steps {
-                    echo 'Deploying....'
+                    logger.log constants.DEPLOY()
                 }
             }
         }

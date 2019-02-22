@@ -11,6 +11,12 @@
   <name>testing-jenkins</name>
   <url>https://github.com/FrancoMelandri/testing-jenkins</url>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
   <dependencies>
     
     <dependency>
@@ -83,6 +89,13 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>2.10</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
   </build>
