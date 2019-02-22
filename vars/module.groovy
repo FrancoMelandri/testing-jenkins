@@ -5,22 +5,30 @@ def call() {
         stages {
             stage('Build') {
                 steps {
-                    logger.log constants.PREPARE()
+                    script {
+                        logger.log constants.PREPARE()
+                    }
                 }
             }
             stage('Build') {
                 steps {
-                    logger.log constants.BUILD()
+                    script {
+                        logger.log constants.BUILD()
+                    }
                 }
             }
             stage('Test') {
                 steps {
-                    logger.log constants.TEST()
+                    script {
+                        logger.log constants.TEST()
+                    }
                 }
             }
             stage('Deploy') {
                 steps {
-                    logger.log constants.DEPLOY()
+                    script {
+                        logger.log constants.DEPLOY()
+                    }
                 }
             }
         }
