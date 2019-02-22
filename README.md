@@ -26,8 +26,18 @@ To launch the test in local environment
 If you want to test locally the pipeline test you can run a docker container and then configure jenkins application
 
 ```
-> docker run -p 8080:8080 jenkins
+> docker run \
+    --rm \
+    -u root \
+    -p 8080:8080 \
+    -v jenkins-data:/var/jenkins_home \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v "$HOME":/home \
+    jenkinsci/blueocean
 ```
+
+Goto lo https://localhost:8080 finsich the Jenkins setup wizard and setup the Jobs.
+
 
 
 
@@ -40,9 +50,12 @@ https://jenkins.io/doc/book/pipeline/shared-libraries/#global-shared-libraries
 
 
 
-Base test library fro Jenkins pipeline code
+Base test library for Jenkins pipeline code
 
 https://github.com/jenkinsci/JenkinsPipelineUnit
 
 
+How to launch Jenkins locally and build using maven
+
+https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/
 
