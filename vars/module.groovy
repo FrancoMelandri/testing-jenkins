@@ -3,7 +3,7 @@ def call() {
         agent any
 
         stages {
-            stage('Build') {
+            stage('Prepare') {
                 steps {
                     script {
                         logger.log constants.PREPARE()
