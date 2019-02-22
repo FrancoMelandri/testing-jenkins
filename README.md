@@ -1,5 +1,7 @@
 # testing-jenkins
 
+
+
 ### What is
 
 The aim of this repository is to show how you can build your Jenkins pipeline library using a TDD approach. This can help you during development in order to speed up your code. 
@@ -11,6 +13,8 @@ All the code in the pipeline use groovy language
 You have to install maven in order to run the test locally
 
 
+
+------
 
 
 ### How to use
@@ -36,10 +40,18 @@ If you want to test locally the pipeline test you can run a docker container and
     jenkinsci/blueocean
 ```
 
-Goto lo https://localhost:8080 finsich the Jenkins setup wizard and setup the Jobs.
+Goto https://localhost:8080 finish the Jenkins setup wizard and setup the Jobs.
+
+First of all you have to configure a **Global Library** called *testing-jenkins* pointing to the https://github.com/FrancoMelandri/testing-jenkins git repo.
+
+You can define two different Jobs
+
+- **Run** as a pipeline Job that launch the *Jenkinsfile*
+- **Build** as a pipeline Job that launche the *Jenkinsfile.c*i to ensure the library compile and build
 
 
 
+------
 
 
 ### Additional info
@@ -47,8 +59,6 @@ Goto lo https://localhost:8080 finsich the Jenkins setup wizard and setup the Jo
 How to build a Jenkins pipeline library
 
 https://jenkins.io/doc/book/pipeline/shared-libraries/#global-shared-libraries
-
-
 
 Base test library for Jenkins pipeline code
 
