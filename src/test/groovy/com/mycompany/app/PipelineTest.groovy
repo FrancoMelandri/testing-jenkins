@@ -23,7 +23,14 @@ class PipelineTest extends PipelineTestHelper {
     }
 
     @Test
-    void shouldCallPrepareLog() throws Exception {
+    void shouldCallAllLogs() throws Exception {
+        def allLogs = ["Prepare", "Build", "Test", "Deploy"]
+        sut.logger.logCallback = { toLog ->
+            assertEquals(allLogs[sut.logger.logCount - 1], toLog)
+        }
+
         sut.call()
+
+        assertEquals(sut.logger.logCount, 4)
     }
 }
